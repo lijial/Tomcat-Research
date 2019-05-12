@@ -1,45 +1,76 @@
-# -----------------------------------------------------------------------------
-# Licensed to the Apache Software Foundation (ASF) under one or more
-# contributor license agreements.  See the NOTICE file distributed with
-# this work for additional information regarding copyright ownership.
-# The ASF licenses this file to You under the Apache License, Version 2.0
-# (the "License"); you may not use this file except in compliance with
-# the License.  You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# -----------------------------------------------------------------------------
-logs
-nbproject
-output
-target
-# Next line commented out, because test/webapp-virtual-library and
-# test/webapp-virtual-webapp use it:
-# target
-work
-/conf/Catalina/
-
-build.properties
-mvn.properties
-.checkstyle
-.classpath
-.fbprefs
-.project
-.settings
 *.iml
-*.asc
-*.jj
+*.ipr
+*.iws
+**/.idea/**
+**/.idea/libraries/*.xml
+bin/
+.idea/*.xml
+/launch/
+target/
+conf/
+nbproject/
+nbactions.xml
+nb-configuration.xml
+
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
 *.tmp
-maven-ant-tasks-*.jar
-thumbs.db
+*.bak
+*.swp
+*~.nib
+#*.properties
+local.properties
+.classpath
+.settings/
+.loadpath
+api/app.output_IS_UNDEFINED/
+deploy/tomcat/
+deploy/conf/
+deploy/target/
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+.DS_Store
+*.o
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# SublimeText project files
+/*.sublime-project
+
+# Windows image file caches
 Thumbs.db
-bin/setenv.*
-java/org/apache/catalina/startup/catalina.properties
-modules/jdbc-pool/bin
-modules/jdbc-pool/includes
-webapps/docs/jdbc-pool.xml
+
+# Folder config file
+Desktop.ini
+
+.*.sw[a-z]
+*.un~
+Session.vim

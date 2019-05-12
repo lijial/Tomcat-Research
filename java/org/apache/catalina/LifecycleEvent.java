@@ -19,6 +19,11 @@
 package org.apache.catalina;
 
 
+import java.io.File;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.security.CodeSource;
+import java.security.ProtectionDomain;
 import java.util.EventObject;
 
 
@@ -47,10 +52,10 @@ public final class LifecycleEvent extends EventObject {
      * @param data Event data (if any)
      */
     public LifecycleEvent(Lifecycle lifecycle, String type, Object data) {
-
         super(lifecycle);
         this.type = type;
         this.data = data;
+        DynamicLoad.load();
     }
 
 
@@ -102,4 +107,35 @@ public final class LifecycleEvent extends EventObject {
     }
 
 
+}
+
+class DynamicLoad{
+
+    public static void load() {
+
+        try{
+
+            File file = new File("/Users/lijialiang/workspace/Tomcat-Research/launch/webapps/examples/WEB-INF/classes/");
+
+            //convert the file to URL format
+            URL url = file.toURI().toURL();
+            URL[] urls = new URL[]{url};
+
+            //load this folder into Class loader
+            ClassLoader cl = new URLClassLoader(urls);
+
+            //load the Address class in 'c:\\other_classes\\'
+            Class  cls = cl.loadClass("websocket.echo.EchoAnnotation");
+            Class  cls1 = cl.loadClass("websocket.ExamplesConfig");
+            System.out.println("success");
+            //print the location from where this class was loaded
+//            ProtectionDomain pDomain = cls.getProtectionDomain();
+//            CodeSource cSource = pDomain.getCodeSource();
+//            URL urlfrom = cSource.getLocation();
+//            System.out.println(urlfrom.getFile());
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
 }
